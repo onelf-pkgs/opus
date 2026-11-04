@@ -1,0 +1,17 @@
+# Opus for onelf packages: the codec library a bundle carries in place of
+# a distribution build whose neural network features make it several
+# megabytes.
+#
+# The control repository, onelf-pkgs/.github, bumps the sources here when
+# upstream releases and resets `release` to 1. Raise `release` by hand
+# when the recipe changes and the sources do not. Releases are tagged
+# v<opus version>-<release>.
+name = "opus"
+release = 1
+arches = ["x86_64", "aarch64"]
+
+[sources.opus]
+version = "1.6.1"
+url = "https://downloads.xiph.org/releases/opus/opus-{version}.tar.gz"
+sha256 = "6ffcb593207be92584df15b32466ed64bbec99109f007c82205f0194572411a1"
+upstream = { gitlab = "gitlab.xiph.org/xiph/opus", tag = "^v([0-9]+\\.[0-9]+(?:\\.[0-9]+)?)$" }
